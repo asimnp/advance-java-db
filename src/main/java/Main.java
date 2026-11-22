@@ -8,10 +8,12 @@ public class Main {
             Connection conn = DriverManager.getConnection(DB_URL, "root", "root_pass123");
 
              Statement stmt =  conn.createStatement();
-             stmt.executeUpdate("INSERT INTO student (name, bio, age) VALUES ('Jane', " +
-                           "'Learner', 18)");
+             stmt.executeUpdate("INSERT INTO student (name, bio, age) VALUES ('Tom', 'Observer', 28)");
 
-            System.out.println("Inserted data successfully !");
+            System.out.println("Data inserted successfully !");
+
+            stmt.close();
+            conn.close();
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());
         }
