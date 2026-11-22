@@ -7,7 +7,11 @@ public class Main {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(DB_URL, "root", "root_pass123");
 
-            System.out.println("DB Connected!");
+             Statement stmt =  conn.createStatement();
+             stmt.executeUpdate("INSERT INTO student (name, bio, age) VALUES ('Jane', " +
+                           "'Learner', 18)");
+
+            System.out.println("Inserted data successfully !");
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());
         }
