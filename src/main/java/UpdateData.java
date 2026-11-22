@@ -20,6 +20,9 @@ public class UpdateData {
                 rs.next();
                 System.out.println("Name: " + rs.getString("name"));
             }
+
+            stmt.close();
+            conn.close();
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());
         }
